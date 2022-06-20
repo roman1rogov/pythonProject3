@@ -1,86 +1,44 @@
+while True:
 
-import random
-numbers = ['pushkin', 'mozart', 'picasso', 'mikilanjilo', 'magellan', 'repin', 'einstein', 'newton']
+    right_answer = 0
+    wrong_answer = 0
 
-result = random.sample(numbers, 5)
-print(result)
+    import random
+    numbers = ['pushkin', 'mozart', 'picasso', 'mikilanjilo', 'magellan', 'repin', 'einstein', 'newton']
 
-day = {
-    '1': 'первое',
-    '2': 'второе',
-    '3': 'третье',
-    '4': 'четвертое',
-    '5': 'пятое',
-    '6': 'шестое',
-    '7': 'седьмое',
-    '8': 'восьмое',
-    '9': 'девятое',
-    '10': 'десятое',
-    '11': 'одинадцатое',
-    '12': 'двенадцатое',
-    '13': 'тринадцатое',
-    '14': 'четырнадцатое',
-    '15': 'пятнадцатое',
-    '16': 'шестнадцатое',
-    '17': 'семнадцатое',
-    '18': 'восемнадцатое',
-    '19': 'девятнадцатое',
-    '20': 'двадцатое',
-    '21': 'двадцатьпервое',
-    '22': 'вдвадцатьвторое',
-    '23': 'двадцатьтретье',
-    '24': 'двадцатьчетвертое',
-    '25': 'двадцатьпятое',
-    '26': 'двадцатьшестое',
-    '27': 'двадцатьседьмое',
-    '28': 'двадцатьвосьмое',
-    '29': 'двадцатьдевятое',
-    '30': 'тридцатое',
-    '31': 'тридцатьпервое'
-}
-
-monh = {
-    '01': 'январь',
-    '02': 'февраль',
-    '03': 'март',
-    '04': 'апрель',
-    '05': 'май',
-    '06': 'июнь',
-    '07': 'июль',
-    '08': 'август',
-    '09': 'сентябрь',
-    '10': 'октябрь',
-    '11': 'ноябрь',
-    '12': 'декабрь',
-}
+    result = random.sample(numbers, 5)
+    print(result)
 
 
-picasso = '25.10.1881'
-days, months, year = picasso.split('.')
+    answer_dict = {
+        'pushkin': '06.05.1799',
+        'picasso': '25.10.1881',
+        'repin': '05.08.1844',
+        'magellan': '20.10.1480',
+        'einstein': '20.10.1480',
+        'newton': '04.01.1643',
+        'mozart': '27.01.1756',
+        'mikilanjilo': '27.01.1756',
+    }
+    for name in result:
+        data = input(f'Введите дату рождения для {name} в формате dd.mm.yyyy: ')
 
-repin = '05.08.1844'
-days1, months1, year1 = repin.split('.')
+        if data == answer_dict[name]:
+                right_answer += 1
+        else:
+                wrong_answer += 1
+    print('Правильных ответов:', right_answer)
+    print('Неправильных ответов:', wrong_answer)
 
-magellan = '20.10.1480'
-days2, months2, year2 = magellan.split('.')
+    resume_victory = (input('Продолжим игру: '))
+    if resume_victory == 'нет':
+        break
+print('GameOver')
 
-einstein = '20.10.1480'
-days3, months3, year3 = einstein.split('.')
 
-newton = '04.01.1643'
-days4, months4, year4 = newton.split('.')
 
-mozart = '27.01.1756'
-days5, months5, year5 = mozart.split('.')
 
-pushkin = '06.05.1799'
-days6, months6, year6 = pushkin.split('.')
 
-mikilanjilo = '27.01.1756'
-days7, months7, year7 = mikilanjilo.split('.')
-
-for name in result:
-    data = input(f'Введите дату рождения для {name} в формате dd.mm.yyyy: ')
 
 
 
